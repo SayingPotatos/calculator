@@ -1,2 +1,2 @@
 def subtraction(arg1,arg2):
-    return 0
+    return arg1-arg2
