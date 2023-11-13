@@ -16,11 +16,28 @@ from multiplication import multiplication
 from error import validator
 from easteregg import easteregg
 
+def multiple(args):
+    while 'x' in args:
+        index = args.index('x')
+        result = multiplication(args[index-1], args[index+1])
+        args[index-1:index+2] = [result]
+    return args
+
 def calculator(args):
     # 수식
     print(args)
     validator(args)
     easteregg(args)
-    # 여기서 사칙연산처리
 
-    return 0
+    args = multiple(args)
+    
+    # 여기서 사칙연산처리
+    while '+' in args or '-' in args:
+        if '+' in args:
+            index = args.index('+')
+            result = addition(args[index - 1], args[index + 1])
+        elif '-' in args:
+            index = args.index('-')
+            result = subtraction(args[index - 1], args[index + 1])
+        args[index - 1:index + 2] = [result]
+    return args[0]
