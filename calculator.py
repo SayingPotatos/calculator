@@ -14,13 +14,20 @@ from multiplication import multiplication
 
 # 에러, 이스터에그 import 
 from error import validator
+from error import noiseFilter
 from easteregg import easteregg
 
 def calculator(args):
+    noiseFilter(args)
+    
     # 수식
     print(args)
-    validator(args)
     easteregg(args)
+    
     # 여기서 사칙연산처리
+    if (validator(args)):
+        # 연산
+    else:
+        print("ERROR")
 
     return 0
