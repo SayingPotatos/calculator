@@ -26,4 +26,5 @@ def validator(args):
 
 def noiseFilter(args):
     # 원소 내부의 공백 제거
+    for i in range(len(args)):
         args[i] = args[i].strip();
