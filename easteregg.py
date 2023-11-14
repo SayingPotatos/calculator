@@ -43,6 +43,6 @@ def easteregg(args):
     elif _args == 1225:
         return 'MerryChristmas!'
     else:
-        return ' '
+        return 0
 
 
