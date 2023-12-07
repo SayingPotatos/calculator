@@ -3,9 +3,17 @@ from operators.factorial import factorial
 
 # TODO: 정상적인 수식인지 확인 및 에러 시 동작
 
-# 0 반환시 ERROR
-# 1 반환시 계산 수행
-def validator(args):        
+def isInt(n):
+    _s = n
+    try:
+        _s = int(_s)
+    except ValueError:
+        return False
+    return True
+
+# ERROR 발생 시 str 객체 반환
+def validator(state, st, u):    
+    err_out = "Input Error"    
     # 정해진 연산자
     if state == 0:
         if isInt(u):
@@ -20,12 +28,9 @@ def validator(args):
             state = 2
         elif u == "=":
             state = 4
-        elif u == "!":
-            u = factorial(int(st.pop()))
-            state = 1
-            if isinstance(u, str):
-                err_out = u
-                state = 3
+        ## 추후 팩토리얼 추가시 활용
+        # elif u == "!":
+        #     state = 1
         else:
             state = 3
     elif state == 2:
