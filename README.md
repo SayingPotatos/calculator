@@ -2,6 +2,12 @@
 
 [문서](https://yaehee.notion.site/44cac769da1649569aef8966c431382c?pvs=4)
 
+## 테스트
+
+```bash
+python3 -m unittest discover tests # 모든 테스트 실행
+```
+
 ## Git
 
 아래 순서대로 작업해주세요.
