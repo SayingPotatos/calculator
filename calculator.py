@@ -20,6 +20,20 @@ def multiple(args):
     return args
 
 def calculator(args):
+
+    # 수식
+
+    noiseFilter(args); #공백제거
+
+
+    if not validator(args):
+        print( "입력이 바르지 않습니다.")
+        return None
+    
+    # print(args)
+
+    # easteregg(args)
+
     args = multiple(args)
     
     # 여기서 사칙연산처리
