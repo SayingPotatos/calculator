@@ -40,6 +40,9 @@ def validator(state, st, u):
             state = 3 
         
     if state == 3:
-        return state, u
+        u = err_out
+    
+    if isInt(u):
+        u = int(u)
     
     return state, u
