@@ -4,6 +4,7 @@ import unittest as ut
 #---------------------------Factorial test-----------------------------
 from operators.factorial import factorial
 
+
 # test class
 #----------------------------------------------------------------------
 
