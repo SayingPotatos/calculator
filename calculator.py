@@ -8,14 +8,9 @@ operator_dir = os.path.join(script_dir, 'operator')
 sys.path.append(operator_dir)
 
 # 연산자 import
-from operator.addition import addition
-from operator.subtraction import subtraction
-from operator.multiplication import multiplication
-
-# 에러, 이스터에그 import 
-from error import validator
-from easteregg import easteregg
-from error import noiseFilter
+from operators.addition import addition
+from operators.subtraction import subtraction
+from operators.multiplication import multiplication
 
 def multiple(args):
     while 'x' in args:
@@ -25,6 +20,7 @@ def multiple(args):
     return args
 
 def calculator(args):
+
     # 수식
 
     noiseFilter(args); #공백제거
