@@ -8,4 +8,4 @@ from operators.factorial import factorial
 #----------------------------------------------------------------------
 
 if __name__ == '__main__':
-    # 러닝 코드용
+    ut.main()
