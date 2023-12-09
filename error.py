@@ -28,9 +28,8 @@ def validator(state, st, u):
             state = 2
         elif u == "=":
             state = 4
-        ## 추후 팩토리얼 추가시 활용
-        # elif u == "!":
-        #     state = 1
+        elif u == "!":
+            state = 1
         else:
             state = 3
     elif state == 2:
@@ -42,7 +41,10 @@ def validator(state, st, u):
     if state == 3:
         u = err_out
     
+<<<<<<< Updated upstream
     if isInt(u):
         u = int(u)
     
+=======
+>>>>>>> Stashed changes
     return state, u
