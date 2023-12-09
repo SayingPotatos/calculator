@@ -1,12 +1,7 @@
 import unittest as ut
-
-# test하고 싶은 메소드 import
-#---------------------------Factorial test-----------------------------
 from operators.subtraction import subtraction
 from calculator import calculator
 
-# test class
-#----------------------------------------------------------------------
 class TestSubtraction(ut.TestCase):
     def test_subtraction_one(self):
         self.assertEqual(subtraction(1, 2), -1)
@@ -24,9 +19,18 @@ class TestSubtraction(ut.TestCase):
         self.assertEqual(calculator(["1000000", "-", "2000000"]), -1000000)
 
     def test_subtraction_positive_negative(self):
-        self.assertEqual(subtraction(200000- 1000), 199000)
+        self.assertEqual(subtraction(200000, 1000), 199000)
         self.assertEqual(calculator([200000, "-", 1000]), 199000)
         self.assertEqual(calculator(["200000", "-", "1000"]), 199000)
 
+def suite():
+    test_suite = ut.TestSuite()
+    test_suite.addTest(TestSubtraction('test_subtraction_one'))
+    test_suite.addTest(TestSubtraction('test_subtraction_zero'))
+    test_suite.addTest(TestSubtraction('test_subtraction_large_numbers'))
+    test_suite.addTest(TestSubtraction('test_subtraction_positive_negative'))
+    return test_suite
+
 if __name__ == '__main__':
-    ut.main()
+    runner = ut.TextTestRunner()
+    runner.run(suite())
