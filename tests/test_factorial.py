@@ -12,3 +12,4 @@ class TestFactorial(ut.TestCase):
         
 if __name__ == '__main__':
     # 러닝 코드용
+    ut.main(exit=False)
