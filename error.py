@@ -41,10 +41,4 @@ def validator(state, st, u):
     if state == 3:
         u = err_out
     
-<<<<<<< Updated upstream
-    if isInt(u):
-        u = int(u)
-    
-=======
->>>>>>> Stashed changes
     return state, u
