@@ -163,8 +163,8 @@ class TestValidator_factorial(ut.TestCase):
         test_input = ["1", "!", "="]
         input_num = 0 #input 횟수
         state = 0
-        test_output1 = [1, 2, 1, 4]
-        test_output2 = [1, "x", 1, "="]
+        test_output1 = [1, 1, 4]
+        test_output2 = [1, "!", "="]
         stack = []
         for t in test_input:
             state, converted_user_input = validator(state, stack, t)
