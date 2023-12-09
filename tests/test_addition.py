@@ -18,5 +18,13 @@ class TestAddition(ut.TestCase):
         self.assertEqual(calculator([1000000, "+", 2000000]), 3000000)
         self.assertEqual(calculator(["1000000", "+", "2000000"]), 3000000)
 
+def suite():
+    test_suite = ut.TestSuite()
+    test_suite.addTest(TestAddition('test_addition_one'))
+    test_suite.addTest(TestAddition('test_addition_zero'))
+    test_suite.addTest(TestAddition('test_addition_large_numbers'))
+    return test_suite
+
 if __name__ == '__main__':
-    ut.main()
+    runner = ut.TextTestRunner()
+    runner.run(suite())

@@ -1,12 +1,7 @@
 import unittest as ut
-
-# test하고 싶은 메소드 import
-#---------------------------Factorial test-----------------------------
 from operators.multiplication import multiplication
 from calculator import calculator
 
-# test class
-#----------------------------------------------------------------------
 class TestMultiplication(ut.TestCase):
     def test_multiplication_one(self):
         self.assertEqual(multiplication(1, 2), 2)
@@ -23,5 +18,13 @@ class TestMultiplication(ut.TestCase):
         self.assertEqual(calculator([1000000, "*", 2000000]), 2000000000000)
         self.assertEqual(calculator(["1000000", "*", "2000000"]), 2000000000000)
 
+def suite():
+    test_suite = ut.TestSuite()
+    test_suite.addTest(TestMultiplication('test_multiplication_one'))
+    test_suite.addTest(TestMultiplication('test_multiplication_zero'))
+    test_suite.addTest(TestMultiplication('test_multiplication_large_numbers'))
+    return test_suite
+
 if __name__ == '__main__':
-    ut.main()
+    runner = ut.TextTestRunner()
+    runner.run(suite())
