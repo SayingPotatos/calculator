@@ -5,10 +5,29 @@ import unittest as ut
 from operators.factorial import factorial
 
 # test class
-#----------------------------------------------------------------------
-class TestFactorial(ut.TestCase):
+# 음수 입력시 에러 코드 
+class TestFactorial_InputLess0(ut.TestCase):
     def test_1(self): 
-        self.assertEqual(factorial(-1),"[ERROR] Out Of Range") #음수 입력시 에러 코드 
+        self.assertEqual(factorial([-1]),"[ERROR] Out Of Range") 
+
+# 0 입력시 동작
+class TestFactorial_Input0(ut.TestCase):
+    def test_3(self):
+        test_input = [0]
+        test_output = 1
+        self.assertEqual(test_output, factorial(test_input))
+
+
+# 두개 이상의 숫자 입력시 에러
+class TestFactorial_Input0(ut.TestCase):
+    def test_4(self):
+        test_input = [1,2]
+        test_output = "[ERROR] Input Error"
+        self.assertEqual(test_output, factorial(test_input))
+
+        
+#----------------------------------------------------------------------
+
         
 if __name__ == '__main__':
     # 러닝 코드용
