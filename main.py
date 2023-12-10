@@ -25,5 +25,4 @@ while user_input != "=":
     stack.append(user_input)
     
 # = 입력 후...여기서 연산 결과 처리
-
 print(calculator(stack))
