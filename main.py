@@ -18,6 +18,7 @@ while user_input != "=":
     else:
         print(f'[EVENT] "안녕! {user_input}은 사용할 수 없는 숫자야!"')
     sys.exit()
+
     state, user_input = validator(state, stack, user_input)
     
     if state == 3:
