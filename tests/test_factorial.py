@@ -23,6 +23,7 @@ class TestFactorial_Input0(ut.TestCase):
         self.assertEqual(test_output, factorial(test_input))
 
 class TestFactorial_InputNormal(ut.TestCase):
+
     def test_4(self):
         test_input = 3
         test_output = 6
