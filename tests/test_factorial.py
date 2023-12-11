@@ -22,8 +22,16 @@ class TestFactorial_Input0(ut.TestCase):
         test_output = 1
         self.assertEqual(test_output, factorial(test_input))
 #----------------------------------------------------------------------
-
         
 if __name__ == '__main__':
-    # 러닝 코드용
-    ut.main(exit=False)
+    factorial_inputLess0_suite = ut.TestSuite()
+    factorial_inputLess0_suite.addTests(ut.TestLoader().loadTestsFromTestCase(TestFactorial_InputLess0))
+    
+    factorial_input0_suite = ut.TestSuite()
+    factorial_input0_suite.addTests(ut.TestLoader().loadTestsFromTestCase(TestFactorial_Input0))
+
+    # 팩토리얼 관련 suite들을 하나로 묶음
+    all_factorial_suites = ut.TestSuite([factorial_inputLess0, factorial_input0_suite])
+    
+    # 팩토리얼 suites에 대한 test실행
+    ut.TextTestRunner().run(all_factorial_suites)
