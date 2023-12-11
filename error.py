@@ -15,7 +15,7 @@ def isInt(n):
     return True
 
 # ERROR 발생 시 str 객체 반환
-def validator(state, st, u):    
+def validator(state, u):    
     err_out = "Input Error"    
     # 정해진 연산자
     if state == 0:
