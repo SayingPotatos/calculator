@@ -21,14 +21,9 @@ def easteregg(args):
             '952': '좋은 아침',
             '1008': '고민 중',
             '1225': 'Merry Christmas!',
+            '1015': '전북대 개교기념일입니다.'
         }
         
     return dictionary.get(args, 0)
 
-    # result = dictionary.get(args, None)
-
-    # if result is not None:
-    #     print(result)
-    
-    # return result
 
