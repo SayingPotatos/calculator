@@ -20,11 +20,6 @@ def multiple(args):
     return args
 
 def calculator(args):
-
-    # print(args)
-
-    # easteregg(args)
-
     args = multiple(args)
     
     # 여기서 사칙연산처리
@@ -38,4 +33,3 @@ def calculator(args):
         args[index - 1:index + 2] = [result]
 
     return args[0]
-    # return 0
