@@ -16,7 +16,7 @@ while user_input != "=":
     if easter != 0:
         print("[EVENT]", easter)
         
-    state, user_input = validator(state, stack, user_input)
+    state, user_input = validator(state, user_input)
     
     if state == 3:
         print("[SYSTEM]", user_input)
