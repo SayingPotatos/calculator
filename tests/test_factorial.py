@@ -21,8 +21,13 @@ class TestFactorial_Input0(ut.TestCase):
         test_input = 0
         test_output = 1
         self.assertEqual(test_output, factorial(test_input))
-#----------------------------------------------------------------------
 
+class TestFactorial_Input(ut.TestCase):
+    def test_4(self):
+        test_input = 3
+        test_output = 6
+        self.assertEqual(test_output, factorial(test_input))
+        
         
 if __name__ == '__main__':
     # 러닝 코드용
