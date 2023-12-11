@@ -8,7 +8,12 @@ from operators.factorial import factorial
 # 음수 입력시 에러 코드 
 class TestFactorial_InputLess0(ut.TestCase):
     def test_1(self): 
-        self.assertEqual(factorial(-1),"[ERROR] Out Of Range") 
+        self.assertEqual(factorial(-1), "Out Of Range") 
+        
+    def test_2(self):
+        test_input = -10
+        test_output = "Out Of Range"
+        self.assertEqual(test_output, factorial(test_input))
 
 # 0 입력시 동작
 class TestFactorial_Input0(ut.TestCase):
