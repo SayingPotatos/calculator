@@ -1,8 +1,11 @@
 # 연산자 import
 from operators.factorial import factorial
 
-# TODO: 정상적인 수식인지 확인 및 에러 시 동작
-
+# TODO: 정상적인 입력인지 확인 및 에러 시 동작
+#- 비정상 입력 예시(더 있을 수 있음)
+#    ["0","+","+"]
+#    ["0","-","1","1"]
+#    ["+", "="]
 def isInt(n):
     _s = n
     try:
@@ -12,7 +15,7 @@ def isInt(n):
     return True
 
 # ERROR 발생 시 str 객체 반환
-def validator(state, st, u):    
+def validator(state, u):    
     err_out = "Input Error"    
     # 정해진 연산자
     if state == 0:
@@ -28,9 +31,8 @@ def validator(state, st, u):
             state = 2
         elif u == "=":
             state = 4
-        ## 추후 팩토리얼 추가시 활용
-        # elif u == "!":
-        #     state = 1
+        elif u == "!":
+            state = 1
         else:
             state = 3
     elif state == 2:
@@ -41,8 +43,9 @@ def validator(state, st, u):
         
     if state == 3:
         u = err_out
-    
-    #if isInt(u):
-    #u = int(u)
-    
+
+    # 스택 내의 숫자형 문자열을 정수형으로 변환해주는 코드
+    if isInt(u):
+        u = int(u)
+
     return state, u

@@ -11,6 +11,21 @@ sys.path.append(operator_dir)
 from operators.addition import addition
 from operators.subtraction import subtraction
 from operators.multiplication import multiplication
+from operators.factorial import factorial
+
+def _factorial(args):
+    queue = args
+    temp = []
+    while len(queue) != 0:
+        bottom = queue.pop(0)
+        if bottom == "!":
+            num = temp.pop()
+            bottom = factorial(num)
+            if isinstance(bottom, str):
+                print("[SYSTEM]", bottom)
+                sys.exit()
+        temp.append(bottom)
+    return temp
 
 def multiple(args):
     while 'x' in args:
@@ -20,11 +35,7 @@ def multiple(args):
     return args
 
 def calculator(args):
-
-    # print(args)
-
-    # easteregg(args)
-
+    args = _factorial(args)
     args = multiple(args)
     
     # 여기서 사칙연산처리
@@ -38,4 +49,3 @@ def calculator(args):
         args[index - 1:index + 2] = [result]
 
     return args[0]
-    # return 0

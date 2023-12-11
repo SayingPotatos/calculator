@@ -14,16 +14,15 @@ while user_input != "=":
     
     easter = easteregg(user_input)
     if easter != 0:
-        print(easter)
-
-    state, user_input = validator(state, stack, user_input)
+        print("[EVENT]", easter)
+        
+    state, user_input = validator(state, user_input)
     
     if state == 3:
         print("[SYSTEM]", user_input)
         sys.exit()
     
     stack.append(user_input)
-    
-# = 입력 후...여기서 연산 결과 처리
 
 print(calculator(stack))
+

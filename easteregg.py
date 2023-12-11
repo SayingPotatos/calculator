@@ -26,10 +26,4 @@ def easteregg(args):
         
     return dictionary.get(args, 0)
 
-    # result = dictionary.get(args, None)
-
-    # if result is not None:
-    #     print(result)
-    
-    # return result
 
