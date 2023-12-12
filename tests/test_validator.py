@@ -14,7 +14,7 @@ class TestValidator_add(ut.TestCase):
         test_output2 = [1, "+", 1, "="]
         stack = []
         for t in test_input:
-            state, converted_user_input = validator(state, stack, t)
+            state, converted_user_input = validator(state, t)
             self.assertEqual(test_output1[input_num], state)
             self.assertEqual(test_output2[input_num], converted_user_input)
             stack.append(converted_user_input)
@@ -29,7 +29,7 @@ class TestValidator_add(ut.TestCase):
         test_output2 = [1, "+", 3, "Input Error"]
         stack = []
         for t in test_input:
-            state, converted_user_input = validator(state, stack, t)
+            state, converted_user_input = validator(state, t)
             self.assertEqual(test_output1[input_num], state)
             self.assertEqual(test_output2[input_num], converted_user_input)
             stack.append(converted_user_input)
@@ -44,7 +44,7 @@ class TestValidator_add(ut.TestCase):
         test_output2 = [1, "+", "Input Error"]
         stack = []
         for t in test_input:
-            state, converted_user_input = validator(state, stack, t)
+            state, converted_user_input = validator(state, t)
             self.assertEqual(test_output1[input_num], state)
             self.assertEqual(test_output2[input_num], converted_user_input)
             stack.append(converted_user_input)
@@ -60,7 +60,7 @@ class TestValidator_subs(ut.TestCase):
         test_output2 = [1, "-", 1, "="]
         stack = []
         for t in test_input:
-            state, converted_user_input = validator(state, stack, t)
+            state, converted_user_input = validator(state, t)
             self.assertEqual(test_output1[input_num], state)
             self.assertEqual(test_output2[input_num], converted_user_input)
             stack.append(converted_user_input)
@@ -75,7 +75,7 @@ class TestValidator_subs(ut.TestCase):
         test_output2 = [1, "-", 3, "Input Error"]
         stack = []
         for t in test_input:
-            state, converted_user_input = validator(state, stack, t)
+            state, converted_user_input = validator(state, t)
             self.assertEqual(test_output1[input_num], state)
             self.assertEqual(test_output2[input_num], converted_user_input)
             stack.append(converted_user_input)
@@ -90,7 +90,7 @@ class TestValidator_subs(ut.TestCase):
         test_output2 = [1, "-", "Input Error"]
         stack = []
         for t in test_input:
-            state, converted_user_input = validator(state, stack, t)
+            state, converted_user_input = validator(state, t)
             self.assertEqual(test_output1[input_num], state)
             self.assertEqual(test_output2[input_num], converted_user_input)
             stack.append(converted_user_input)
@@ -106,7 +106,7 @@ class TestValidator_multi(ut.TestCase):
         test_output2 = [1, "x", 1, "="]
         stack = []
         for t in test_input:
-            state, converted_user_input = validator(state, stack, t)
+            state, converted_user_input = validator(state, t)
             self.assertEqual(test_output1[input_num], state)
             self.assertEqual(test_output2[input_num], converted_user_input)
             stack.append(converted_user_input)
@@ -121,7 +121,7 @@ class TestValidator_multi(ut.TestCase):
         test_output2 = [1, "x", 3, "Input Error"]
         stack = []
         for t in test_input:
-            state, converted_user_input = validator(state, stack, t)
+            state, converted_user_input = validator(state, t)
             self.assertEqual(test_output1[input_num], state)
             self.assertEqual(test_output2[input_num], converted_user_input)
             stack.append(converted_user_input)
@@ -136,7 +136,7 @@ class TestValidator_multi(ut.TestCase):
         test_output2 = [1, "x", "Input Error"]
         stack = []
         for t in test_input:
-            state, converted_user_input = validator(state, stack, t)
+            state, converted_user_input = validator(state, t)
             self.assertEqual(test_output1[input_num], state)
             self.assertEqual(test_output2[input_num], converted_user_input)
             stack.append(converted_user_input)
@@ -151,7 +151,7 @@ class TestValidator_multi(ut.TestCase):
         test_output2 = [1, "Input Error"]
         stack = []
         for t in test_input:
-            state, converted_user_input = validator(state, stack, t)
+            state, converted_user_input = validator(state, t)
             self.assertEqual(test_output1[input_num], state)
             self.assertEqual(test_output2[input_num], converted_user_input)
             stack.append(converted_user_input)
@@ -167,7 +167,7 @@ class TestValidator_factorial(ut.TestCase):
         test_output2 = [1, "!", "="]
         stack = []
         for t in test_input:
-            state, converted_user_input = validator(state, stack, t)
+            state, converted_user_input = validator(state, t)
             self.assertEqual(test_output1[input_num], state)
             self.assertEqual(test_output2[input_num], converted_user_input)
             stack.append(converted_user_input)
@@ -182,7 +182,7 @@ class TestValidator_factorial(ut.TestCase):
         test_output2 = [1, "Input Error"]
         stack = []
         for t in test_input:
-            state, converted_user_input = validator(state, stack, t)
+            state, converted_user_input = validator(state, t)
             self.assertEqual(test_output1[input_num], state)
             self.assertEqual(test_output2[input_num], converted_user_input)
             stack.append(converted_user_input)
@@ -197,7 +197,7 @@ class TestValidator_factorial(ut.TestCase):
         test_output2 = [1, "!", "!", "="]
         stack = []
         for t in test_input:
-            state, converted_user_input = validator(state, stack, t)
+            state, converted_user_input = validator(state, t)
             self.assertEqual(test_output1[input_num], state)
             self.assertEqual(test_output2[input_num], converted_user_input)
             stack.append(converted_user_input)
@@ -211,7 +211,7 @@ class TestValidator_startWithOperator(ut.TestCase):
         test_output2 = "Input Error"
         state = 0
         stack = [test_input]
-        state, converted_user_input = validator(state, stack, test_input)
+        state, converted_user_input = validator(state, test_input)
         self.assertEqual(test_output1, state)
         self.assertEqual(test_output2, converted_user_input)
     
@@ -221,7 +221,7 @@ class TestValidator_startWithOperator(ut.TestCase):
         test_output2 = "Input Error"
         state = 0
         stack = [test_input]
-        state, converted_user_input = validator(state, stack, test_input)
+        state, converted_user_input = validator(state, test_input)
         self.assertEqual(test_output1, state)
         self.assertEqual(test_output2, converted_user_input)
         
@@ -231,7 +231,7 @@ class TestValidator_startWithOperator(ut.TestCase):
         test_output2 = "Input Error"
         state = 0
         stack = [test_input]
-        state, converted_user_input = validator(state, stack, test_input)
+        state, converted_user_input = validator(state, test_input)
         self.assertEqual(test_output1, state)
         self.assertEqual(test_output2, converted_user_input)
         
@@ -241,7 +241,7 @@ class TestValidator_startWithOperator(ut.TestCase):
         test_output2 = "Input Error"
         state = 0
         stack = [test_input]
-        state, converted_user_input = validator(state, stack, test_input)
+        state, converted_user_input = validator(state, test_input)
         self.assertEqual(test_output1, state)
         self.assertEqual(test_output2, converted_user_input)
     
@@ -252,7 +252,7 @@ class TestValidator_startWithOperator(ut.TestCase):
         test_output2 = "="
         state = 0
         stack = [test_input]
-        state, converted_user_input = validator(state, stack, test_input)
+        state, converted_user_input = validator(state, test_input)
         self.assertEqual(test_output1, state)
         self.assertEqual(test_output2, converted_user_input)
 #----------------------------------------------------------------------
