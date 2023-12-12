@@ -29,4 +29,4 @@ if state != 3:
     # = 입력 후...여기서 연산 결과 처리
     print(calculator(stack))
 else:
-    print("[SYSTEM]", user_input)
+    print("[SYSTEM] Input Error")
